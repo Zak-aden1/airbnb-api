@@ -2,7 +2,7 @@ require("dotenv").config()
 const express = require("express")
 const cors = require("cors")
 const mongoose = require("mongoose")
-const workoutRoutes = require("./routes/workouts")
+const UsersRoutes = require("./routes/Users.js")
 
 const app = express()
 
@@ -18,7 +18,8 @@ console.log({path: req.path, method: req.method})
   next()
 })
 
-// app.use('/api/workouts', workoutRoutes)
+// routes
+app.use('/api/auth', UsersRoutes)
 
 app.post("/register", (req, res) => {
   console.log({body: req.body})
