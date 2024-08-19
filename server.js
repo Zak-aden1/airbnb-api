@@ -21,11 +21,6 @@ console.log({path: req.path, method: req.method})
 // routes
 app.use('/api/auth', UsersRoutes)
 
-app.post("/register", (req, res) => {
-  console.log({body: req.body})
-  res.json({...req.body})
-})
-
 const port = process.env.PORT || 4000
 // connect to db
 mongoose.connect(process.env.MONGO_URI)
